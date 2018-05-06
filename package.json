@@ -1,0 +1,20 @@
+{
+  "name": "delta32",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanFeinstat/delta32.git"
+  },
+  "author": "Gurnam Sunny, Dan Feinstat, Ben, Ariel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DanFeinstat/delta32/issues"
+  },
+  "homepage": "https://github.com/DanFeinstat/delta32#readme"
+}
