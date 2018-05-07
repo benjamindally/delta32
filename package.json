@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/DanFeinstat/delta32/issues"
   },
-  "homepage": "https://github.com/DanFeinstat/delta32#readme"
+  "homepage": "https://github.com/DanFeinstat/delta32#readme",
+  "dependencies": {
+    "sequelize": "^4.37.6"
+  }
 }
