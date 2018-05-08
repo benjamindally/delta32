@@ -18,6 +18,11 @@
   },
   "homepage": "https://github.com/DanFeinstat/delta32#readme",
   "dependencies": {
-    "sequelize": "^4.37.6"
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "fs": "0.0.1-security",
+    "mysql2": "^1.5.3",
+    "path": "^0.12.7",
+    "sequelize": "^4.37.7"
   }
 }
