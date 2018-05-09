@@ -1,5 +1,6 @@
 {
   "development": {
+    "port": 8889,
     "username": "root",
     "password": "root",
     "database": "delta32_db",
@@ -7,6 +8,7 @@
     "dialect": "mysql"
   },
   "test": {
+    "port": 8889,
     "username": "root",
     "password": "root",
     "database": "delta32_db",
@@ -14,6 +16,7 @@
     "dialect": "mysql"
   },
   "production": {
+    "port": 8889,
     "username": "root",
     "password": "root",
     "database": "delta32_db",
