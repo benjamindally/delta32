@@ -2,6 +2,7 @@ module.exports = function(sequelize, DataTypes) {
   //craetes a "Contributor" model that will match to db
   var Contributor = sequelize.define("Contributor", {
     //the name of the contibutor in text form
+
     name: {
       type: DataTypes.STRING,
       allowNull: false,
