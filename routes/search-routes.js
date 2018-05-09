@@ -1,5 +1,6 @@
 //import models
 const db = require("../models");
+const Op = Sequelize.Op;
 // const express = require("express");
 
 //Routes
@@ -74,7 +75,7 @@ module.exports = function(app) {
   app.get("/api/videos/:author", function(req, res) {
     db.Contributor.findAll({
       where: {
-        user_name: req.params.author,
+        name: req.params.author,
       },
       include: [db.Video],
     }).then(function(result) {
@@ -92,7 +93,28 @@ module.exports = function(app) {
   app.get("/api/videos/:keyword", function(req, res) {
     db.Video.findAll({
       where: {
-        tag: req.params.keyword,
+        [Op.or]: [
+          { keywordOne: req.params.keyword },
+          { keywordTwo: req.params.keyword },
+          { keywordThree: req.params.keyword },
+        ],
+      },
+      include: [db.Contributor],
+    }).then(function(result) {
+      let hbsObject = {
+        videos: result,
+      };
+      //   console.log(hbsObject);
+      //update with correct handlebars link
+      res.render("search_results", hbsObject);
+      // res.json(result);
+    });
+  });
+
+  app.get("/api/videos/:category", function(req, res) {
+    db.Video.findAll({
+      where: {
+        category: req.params.category,
       },
       include: [db.Contributor],
     }).then(function(result) {
