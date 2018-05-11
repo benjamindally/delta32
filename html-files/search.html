@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Search | Delta32</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+        crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Do+Hyeon" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lobster|Shadows+Into+Light" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/search.css">
+    <link href="https://fonts.googleapis.com/css?family=Shrikhand" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald|Passion+One" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+        crossorigin="anonymous"></script>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9"
+        crossorigin="anonymous">
+    <title>Search Res. - test </title>
+</head>
+
+<body>
+    <!-- nav Bar -->
+    <div class="no-gutter">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand ml-1" href="#">Delta 32</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto mr-4">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Featured
+                            <!-- <span class="sr-only">(current)</span> -->
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            Categories
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Medical</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Environmental</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Lifestyle</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Mission</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" id="nav_search_btn" type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </div>
+        </nav>
+    </div>
+    <!-- Main Search body -->
+    <div class="row search-row">
+        <div class="col-sm-3 text-center">
+            <div class="box">
+                <div class="box-content">
+                    <h2 class="tag-title">HELP US GROW!</h2>
+                    <hr />
+                    <p>Please go to our Go-fund-me page to keep our site going
+                    </p>
+                    <a href="https://www.gofundme.com" target="_blank" class="btn btn-block btn-primary">Go Fund Me</a>
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-content">
+                    <h1 class="tag-title">FOLLOW US!</h1>
+                    <hr />
+                    <a href="https://www.facebook.com" target="_blank">
+                        <i class="fab fa-facebook-square media-logo"></i>
+                    </a>
+                    <a href="https://www.twitter.com" target="_blank">
+                        <i class="fab fa-twitter-square media-logo"></i>
+                    </a>
+                    <a href="https://www.github.com" target="_blank">
+                        <i class="fab fa-github-square media-logo"></i>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+        <!-- RESULTS COLUMN -->
+        <div class="col-sm-6">
+            <!-- handlebars example -->
+            <!-- {{#each video}}
+            <a class="vid-box" href="/posts/{{../permalink}}#{{id}}">
+                <img class="thumbnail" src="{{thumb}}" alt="doctor">
+                <h3 class="vid-title">{{title}}</h3>
+                <p class="vid-desc">{{desc}}</p>
+            </a>
+            {{/each}} -->
+
+            <a class="vid-box" href="#">
+                <img class="thumbnail" src="./assets/imgs/thumbnails/doc1.png" alt="doctor">
+                <div class="vid-info">
+                    <h3 class="vid-title">So you have Ebola</h3>
+                    <p class="vid-desc">Ebola sucks... we get it... Dont let it get you down in the dumps..</p>
+                </div>
+            </a>
+            <a class="vid-box" href="#">
+                <img class="thumbnail" src="./assets/imgs/thumbnails/doc2.jpg" alt="doctor">
+                <div class="vid-info">
+                    <h3 class="vid-title">Help With Diabetes</h3>
+                    <p class="vid-desc">A video all about type 2 Diabetes</p>
+                </div>
+
+            </a>
+            <a class="vid-box" href="#">
+                <img class="thumbnail" src="./assets/imgs/thumbnails/doc3.jpg" alt="doctor">
+                <div class="vid-info">
+                    <h3 class="vid-title">Depression Can Hurt</h3>
+                    <p class="vid-desc">Symbalta can help</p>
+                </div>
+            </a>
+            <a class="vid-box" href="#">
+                <img class="thumbnail" src="./assets/imgs/thumbnails/doc1.png" alt="doctor">
+                <div class="vid-info">
+                    <h3 class="vid-title">So you have Ebola</h3>
+                    <p class="vid-desc">Ebola sucks... we get it... Dont let it get you down in the dumps..</p>
+                </div>
+            </a>
+        </div>
+        <div class="col-sm-3 text-center">
+            <div class="box">
+                <div class="box-content">
+                    <h2 class="tag-title">BE A CONTRUBITOR!</h2>
+                    <hr />
+                    <p>If you are smart as hell and have a PHD, We want you!
+                    </p>
+                    <a href="#" class="btn btn-block btn-primary">Learn more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <span class="text-muted"></span>
+        <a class="brand" href="#">Delta 32</a>
+        <a class="links"> || </a>
+        <a class="links" href="#">About </a>
+        <a class="links" href="#">Careers </a>
+        <a class="links" href="#">Contrubitors </a>
+        </span>
+    </footer>
+
+</body>
+
+</html>

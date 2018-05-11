@@ -1,0 +1,108 @@
+/* search page CSS */
+body {
+  background-color: #a7a0a00f;
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/* NavBar */
+nav {
+  height: 8vh;
+  box-shadow: 0px 1px 10px 1px #88888845;
+}
+.navbar-brand {
+  font-family: "Do Hyeon", sans-serif;
+  font-size: x-large;
+}
+
+#nav_search_btn {
+  color: #4c5454eb;
+  border-color: #4c545454;
+}
+
+#nav_search_btn:hover {
+  color: #49494c;
+  background-color: #b1b1b136;
+}
+
+/* VIDEO BOX */
+.search-row {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+.box {
+  background: #fff;
+  transition: all 0.2s ease;
+  border: 1px solid #bec2ce;
+  margin: 10px 4px 10px 4px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  background-clip: padding-box;
+  padding: 4px 4px 4px 4px;
+  box-shadow: 0px 1px 10px 1px #88888845;
+}
+
+.box .box-content {
+  padding: 16px;
+  border-radius: 0 0 2px 2px;
+  background-clip: padding-box;
+  box-sizing: border-box;
+}
+.vid-box {
+  margin: 10px 4px 10px 4px;
+  display: inline-flex;
+  text-decoration: none;
+}
+.vid-title {
+  color: black;
+}
+
+.thumbnail {
+  max-height: 120px;
+  margin-right: 10px;
+}
+/* VIDEO BOX END */
+
+.btn-primary {
+  background: linear-gradient(90deg, #0072ff 0%, #00d4ff 100%);
+  border: blue;
+}
+.tag-title {
+  font-family: "Oswald", sans-serif;
+}
+
+.media-logo,
+.media-logo:hover {
+  font-size: 3em;
+  color: #0072ff;
+}
+
+.vid-desc {
+  font-size: 14px;
+  color: grey;
+}
+
+/* footer */
+.footer {
+  height: 50px;
+  position: static;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  line-height: 60px;
+  background-color: #f8f9fa !important;
+  text-align: center;
+}
+.brand {
+  font-family: "Do Hyeon", sans-serif;
+  color: black !important;
+}
+.links,
+.links:hover {
+  padding: 5px;
+  text-decoration: none;
+  color: black !important;
+}
+a:hover {
+  text-decoration: none;
+}
