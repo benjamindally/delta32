@@ -79,13 +79,13 @@ module.exports = function(app) {
       },
       include: [db.Video],
     }).then(function(result) {
-      let hbsObject = {
-        videos: result,
-      };
+      // let hbsObject = {
+      //   videos: result,
+      // };
       //   console.log(hbsObject);
       //update with correct handlebars link
-      res.render("search_results", hbsObject);
-      // res.json(result);
+      // res.render("search_results", hbsObject);
+      res.json(result);
     });
   });
 

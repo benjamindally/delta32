@@ -19,6 +19,18 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       validate: { len: [1] },
     },
+    //email
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: { len: [1] },
+    },
+    //password
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: { len: [3] },
+    },
   });
 
   Contributor.associate = function(models) {
