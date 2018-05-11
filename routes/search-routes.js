@@ -20,6 +20,11 @@ const Op = db.sequelize.Op;
 module.exports = function(app) {
   //root route
 
+  //root to get the api token
+  app.get("/ziggeoToken", function (req, res) {
+    res.json(process.env.api_token);
+  })
+
   //working route as of 5/10
   app.get("/", function(req, res) {
     db.Video.findAll({

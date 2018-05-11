@@ -1,4 +1,33 @@
 {{!-- Please add this once we set up front page --}}
+{{!-- This will get the token and append the recorder --}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delta 32</title>
 <link rel="stylesheet" href="//assets-cdn.ziggeo.com/v1-stable/ziggeo.css" />
-<script src="//assets-cdn.ziggeo.com/v1-stable/ziggeo.js"></script>
-<script>ZiggeoApi.token = "4919f23cbee42b4be71fdc75207c9e30";</script>
+    <script src="//assets-cdn.ziggeo.com/v1-stable/ziggeo.js"></script>
+        <script>
+            $(document).ready(function () {
+
+                $.get("/ziggeoToken").then(function (token) {
+                    // 
+                    ZiggeoApi.V2.Config.set("flash", "https://polar-journey-48683.herokuapp.com/recorder.swf");
+                    ZiggeoApi.token = token;
+
+                    var ziggeoTag = $("<ziggeo ziggeo-width=320 ziggeo-height=240 ziggeo-responsive=true ziggeo-countdown=3 ziggeo-faceoutline=true ></ziggeo>")
+                    $('#recorder').append(ziggeoTag);
+                })
+            })
+    </script>
+         <script>
+                ZiggeoApi.Events.on("submitted", function (data) {
+                    alert("The video with token has been submitted! Please don't forget to submit video details :) ");
+                                });
+                    </script>
+</head>
+    <body>
+        {{{ body }}}
+    </body>
+    
+    </html>
