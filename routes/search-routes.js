@@ -19,6 +19,8 @@ const Op = db.sequelize.Op;
 
 module.exports = function(app) {
   //root route
+
+  //working route as of 5/10
   app.get("/", function(req, res) {
     db.Video.findAll({
       include: [db.Contributor],
@@ -29,6 +31,7 @@ module.exports = function(app) {
       console.log(hbsObject);
       //update with correct handlebars link
       res.render("index", hbsObject);
+      //res.json(hbsObject);
     });
   });
 
@@ -37,6 +40,8 @@ module.exports = function(app) {
 
   //find all videos
   //include user list
+
+  //working route 5/10
   app.get("/api/videos", function(req, res) {
     db.Video.findAll({
       include: [db.Contributor],
@@ -45,13 +50,14 @@ module.exports = function(app) {
       let hbsObject = {
         videos: result,
       };
-      //   console.log(hbsObject);
+
       //update with correct handlebars link
       res.render("search_results", hbsObject);
-      // res.json(result);
+      // res.json(hbsObject);
     });
   });
 
+  //working route as of 5/10
   //find all videos with a given title
   app.get("/api/videos/:title", function(req, res) {
     db.Video.findAll({
@@ -66,13 +72,14 @@ module.exports = function(app) {
       // console.log(result);
       //update with correct handlebars link
       res.render("search_results", hbsObject);
-      // res.json(result);
+      //res.json(hbsObject);
     });
   });
 
+  //working as of 5/10
   //find all videos with a given author
   //include video list
-  app.get("/api/videos/:author", function(req, res) {
+  app.get("/api/videos/contributor/:author", function(req, res) {
     db.Contributor.findAll({
       where: {
         name: req.params.author,
@@ -82,15 +89,16 @@ module.exports = function(app) {
       let hbsObject = {
         videos: result,
       };
-      //   console.log(hbsObject);
-      //update with correct handlebars link
+      console.log(hbsObject);
+      // update with correct handlebars link
       res.render("search_results", hbsObject);
-      // res.json(result);
+      //res.json(hbsObject);
     });
   });
 
+  //working as of 5/10
   //find all videos with a given tag
-  app.get("/api/videos/:keyword", function(req, res) {
+  app.get("/api/videos/keyword/:keyword", function(req, res) {
     db.Video.findAll({
       where: {
         [Op.or]: [
@@ -107,11 +115,12 @@ module.exports = function(app) {
       //   console.log(hbsObject);
       //update with correct handlebars link
       res.render("search_results", hbsObject);
-      // res.json(result);
+      //res.json(hbsObject);
     });
   });
 
-  app.get("/api/videos/:category", function(req, res) {
+  //working as of 5/10
+  app.get("/api/videos/category/:category", function(req, res) {
     db.Video.findAll({
       where: {
         category: req.params.category,
@@ -124,7 +133,7 @@ module.exports = function(app) {
       //   console.log(hbsObject);
       //update with correct handlebars link
       res.render("search_results", hbsObject);
-      // res.json(result);
+      //res.json(hbsObject);
     });
   });
 
@@ -160,6 +169,7 @@ module.exports = function(app) {
   //If you're using nodemon and you save a change,
   //you will have to run the two post routes again before testing.
 
+  //working as of 5/10
   app.post("/api/contributor", function(req, res) {
     db.Contributor.create({
       name: "test2guy",
@@ -170,6 +180,7 @@ module.exports = function(app) {
     });
   });
 
+  //also working as of 5/10
   app.post("/api/videos", function(req, res) {
     db.Video.create({
       title: "movieTitleTest",
