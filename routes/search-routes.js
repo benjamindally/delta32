@@ -1,6 +1,6 @@
 //import models
 const db = require("../models");
-const Op = Sequelize.Op;
+const Op = db.sequelize.Op;
 // const express = require("express");
 
 //Routes
