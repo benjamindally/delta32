@@ -1,0 +1,135 @@
+body {
+  background-color: #a7a0a00f;
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.fullview {
+  min-height: 100vh;
+}
+/* container */
+.container-fluid {
+  margin: 0;
+  padding: 0;
+}
+/* Nav bar */
+nav {
+  height: 8vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0px 1px 10px 1px #88888845;
+}
+.navbar-brand {
+  font-family: "Do Hyeon", sans-serif;
+  font-size: x-large;
+}
+
+#nav_search_btn {
+  color: #4c5454eb;
+  border-color: #4c545454;
+}
+
+#nav_search_btn:hover {
+  color: #49494c;
+  background-color: #b1b1b136;
+}
+
+/* carousel */
+.carousel-inner {
+  height: 80vh;
+  width: 100vw;
+}
+#carousel_item_1 {
+  height: 80vh;
+}
+#slide1_content {
+  background-color: #abd4d7;
+}
+
+/* first slide */
+#welcome_slide {
+  height: 100vh;
+  width: 100vw;
+  background-image: url("../imgs/fitDude.jpg");
+  background-size: cover;
+}
+
+#welcome_content {
+  margin-left: 17vw;
+  margin-top: 20vh;
+  color: black;
+  background-color: rgb(224, 225, 227, 0.7);
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  padding-left: 3vw;
+  padding-right: 2vw;
+}
+
+.welcome_font_one {
+  font-family: "Passion One", cursive;
+}
+
+.welcome_font_two {
+  font-family: "Oswald", sans-serif;
+}
+
+.welcome_font_three {
+  font-family: "Do Hyeon", sans-serif;
+  font-weight: bold;
+}
+/* second slide */
+#second_slide {
+  height: 100vh;
+  width: 100vw;
+  background-image: url("../imgs/freshFood.jpg");
+  background-size: cover;
+}
+
+#second_content {
+  margin-top: 30vh;
+}
+
+.lobster {
+  font-family: "Lobster", cursive;
+}
+
+.shadowFont {
+  font-family: "Shadows Into Light", cursive;
+}
+
+/* third slide */
+#third_slide {
+  height: 100vh;
+  width: 100vw;
+  background-image: url("../imgs/natureJump.jpg");
+  background-size: cover;
+}
+#third_content {
+  margin-top: 20vh;
+}
+
+.shrikhand {
+  font-family: "Shrikhand", cursive;
+}
+
+.footer {
+  height: 50px;
+  position: static;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  line-height: 60px;
+  background-color: #f8f9fa !important;
+  text-align: center;
+}
+.brand {
+  font-family: "Do Hyeon", sans-serif;
+  color: black !important;
+}
+.links,
+.links:hover {
+  padding: 5px;
+  text-decoration: none;
+  color: black !important;
+}
