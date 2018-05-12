@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Register | Delta32</title>
+    <title>Sign Up| Delta32</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -19,7 +19,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Do+Hyeon" rel="stylesheet">
 
-    <link rel="stylesheet" href="./assets/css/register.css">
+    <link rel="stylesheet" href="../public/assets/css/signup.css">
 </head>
 
 <body>
@@ -74,9 +74,30 @@
         <div class="form">
             <h2>Thank You For Being A Contrubitor!</h2>
             <form class="login-form">
-                <input type="text" placeholder="Email Address" />
-                <input type="password" placeholder="Unique Key" />
-                <button>login</button>
+                <div class="form-row">
+                    <div class="col-sm-6">
+                        <input id="email" type="text" placeholder="Email Address" />
+                    </div>
+                    <div class="col-sm-6">
+                        <input id="password" type="password" placeholder="Password" />
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-sm-12">
+                        <input id="name" type="text" placeholder="Name" />
+                    </div>
+
+                </div>
+                <div class="form-row">
+                    <div class="col-sm-6">
+                        <input id="title" type="text" placeholder="Title" />
+                    </div>
+                    <div class="col-sm-6">
+                        <input id="specality" type="password" placeholder="Specality" />
+                    </div>
+                </div>
+
+                <button>Sign Up</button>
                 <p class="message">Already have an account?
                     <a href="#">Sign in</a>
                 </p>

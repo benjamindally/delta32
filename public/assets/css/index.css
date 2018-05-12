@@ -14,8 +14,10 @@ body {
 }
 /* Nav bar */
 nav {
+  z-index: 1;
+  position: fixed !important;
   height: 8vh;
-  top: 0;
+  top: 0px;
   left: 0;
   right: 0;
   box-shadow: 0px 1px 10px 1px #88888845;
@@ -51,7 +53,7 @@ nav {
 #welcome_slide {
   height: 100vh;
   width: 100vw;
-  background-image: url("../imgs/fitDude.jpg");
+  background-image: url("../images/fitDude.jpg");
   background-size: cover;
 }
 
@@ -82,7 +84,7 @@ nav {
 #second_slide {
   height: 100vh;
   width: 100vw;
-  background-image: url("../imgs/freshFood.jpg");
+  background-image: url("../images/freshFood.jpg");
   background-size: cover;
 }
 
@@ -102,7 +104,7 @@ nav {
 #third_slide {
   height: 100vh;
   width: 100vw;
-  background-image: url("../imgs/natureJump.jpg");
+  background-image: url("../images/natureJump.jpg");
   background-size: cover;
 }
 #third_content {
