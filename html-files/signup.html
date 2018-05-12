@@ -73,34 +73,34 @@
     <div class="login-page">
         <div class="form">
             <h2>Thank You For Being A Contrubitor!</h2>
-            <form class="login-form">
+            <form class="login-form" id="signup" name="signup" method="post" action="/signup">
                 <div class="form-row">
                     <div class="col-sm-6">
-                        <input id="email" type="text" placeholder="Email Address" />
+                        <input id="email" class="text" name="email" type="email" placeholder="Email Address" />
                     </div>
                     <div class="col-sm-6">
-                        <input id="password" type="password" placeholder="Password" />
+                        <input id="password" name="password" type="password" placeholder="Password" />
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="col-sm-12">
-                        <input id="name" type="text" placeholder="Name" />
+                        <input id="name" name="name" type="text" placeholder="Name" />
                     </div>
 
                 </div>
                 <div class="form-row">
                     <div class="col-sm-6">
-                        <input id="title" type="text" placeholder="Title" />
+                        <input id="title" name="title" type="text" placeholder="Title" />
                     </div>
                     <div class="col-sm-6">
-                        <input id="specality" type="password" placeholder="Specality" />
+                        <input id="specality" type="text" placeholder="Specality" />
                     </div>
                 </div>
-
-                <button>Sign Up</button>
+                <input class="btn" type="submit" value="Sign Up" />
+                <!-- <button>Sign Up</button>
                 <p class="message">Already have an account?
                     <a href="#">Sign in</a>
-                </p>
+                </p> -->
             </form>
         </div>
     </div>
