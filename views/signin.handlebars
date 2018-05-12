@@ -49,10 +49,10 @@
 <div class="login-page">
     <div class="form">
         <h2>Thank You For Being A Contrubitor!</h2>
-        <form class="login-form">
-            <input id="email" type="text" placeholder="Email Address" />
-            <input id="password" type="password" placeholder="Password" />
-            <button>login</button>
+        <form id="signin" name="signin" method="post" action="signin" class="login-form">
+            <input id="email" name="email" type="text" placeholder="Email Address" />
+            <input id="password" name="password" type="password" placeholder="Password" />
+            <input class="btn" type="submit" value="Sign In">
             <p class="message">Don't have an account?
                 <a href="#">Sign up</a>
             </p>
