@@ -33,7 +33,7 @@ module.exports = function(app) {
       let hbsObject = {
         videos: result,
       };
-      console.log(hbsObject);
+      //console.log(hbsObject);
       //update with correct handlebars link
       res.render("index", hbsObject);
       //res.json(hbsObject);
@@ -94,7 +94,7 @@ module.exports = function(app) {
       let hbsObject = {
         videos: result,
       };
-      console.log(hbsObject);
+      // console.log(hbsObject);
       // update with correct handlebars link
       res.render("search", hbsObject);
       //res.json(hbsObject);
