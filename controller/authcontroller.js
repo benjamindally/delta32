@@ -9,7 +9,11 @@ exports.signin = function(req, res) {
 };
 
 exports.dashboard = function(req, res) {
-  res.render("dashboard");
+  let hbsObject = {
+    id: req.user.id,
+  };
+  res.render("dashboard", hbsObject);
+  console.log(req.user.id);
 };
 
 exports.logout = function(req, res) {
