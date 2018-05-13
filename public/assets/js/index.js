@@ -1,5 +1,7 @@
 //js file
 $(function() {
+  var videoInfo;
+
   $(".submit").on("click", function(event) {
     event.preventDefault();
     var title = $("#title")
@@ -18,5 +20,46 @@ $(function() {
     var keywordThree = $("#keyword3")
       .val()
       .trim();
+    var ContributorId = $(".submit").attr("value");
+
+    var videoInfo = {
+      title: title,
+      description: description,
+      link: "Unknown",
+      category: category,
+      keywordOne: keywordOne,
+      keywordTwo: keywordTwo,
+      keywordThree: keywordThree,
+      ContributorId: ContributorId,
+    };
+
+    if (title === "") {
+      alert("Please enter a title for your video.");
+      return;
+    } else if (description === "") {
+      alert("Please enter a description for your video.");
+      return;
+    } else if (category === "Choose one...") {
+      alert("Please select a category");
+      return;
+    } else if (keywordOne === "") {
+      alert("Please enter the first keyword.");
+      return;
+    } else {
+      console.log(videoInfo);
+      $.post("api/videos", videoInfo).then(function(newVideo) {
+        console.log(newVideo);
+        clearInputs();
+      });
+    }
   });
+
+  function clearInputs() {
+    $("#title").val("");
+    $("#description").val("");
+    $("#category").val("Choose one...");
+    $("#keyword1").val("");
+    $("#keyword2").val("");
+    $("#keyword3").val("");
+  }
 });

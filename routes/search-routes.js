@@ -187,15 +187,16 @@ module.exports = function(app) {
 
   //also working as of 5/10
   app.post("/api/videos", function(req, res) {
+    var videoInfo = req.body;
     db.Video.create({
-      title: "movieTitleTest",
-      description: "this is a video test",
-      link: "fakelinkhere",
-      category: "medical",
-      keywordOne: "eyballs",
-      keywordTwo: "tatas",
-      keywordThree: "boogaboo",
-      ContributorId: 1,
+      title: videoInfo.title,
+      description: videoInfo.description,
+      link: videoInfo.link,
+      category: videoInfo.category,
+      keywordOne: videoInfo.keywordOne,
+      keywordTwo: videoInfo.keywordTwo,
+      keywordThree: videoInfo.keywordThree,
+      ContributorId: videoInfo.ContributorId,
     }).then(function(newVideo) {
       res.json(newVideo);
     });
