@@ -63,3 +63,13 @@ $(function() {
     $("#keyword3").val("");
   }
 });
+
+//Mission button scroll function
+$("#missionBtn").click(function() {
+  $("html,body").animate(
+    {
+      scrollTop: $("#mission").offset().top,
+    },
+    "slow"
+  );
+});
