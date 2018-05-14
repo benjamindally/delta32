@@ -33,10 +33,23 @@ module.exports = function(app) {
       let hbsObject = {
         videos: result,
       };
-      //console.log(hbsObject);
+      // console.log(hbsObject);
       //update with correct handlebars link
+      // res.json(hbsObject);
       res.render("index", hbsObject);
-      //res.json(hbsObject);
+    });
+  });
+  app.get("/json", function(req, res) {
+    db.Video.findAll({
+      include: [db.Contributor],
+    }).then(function(result) {
+      let hbsObject = {
+        videos: result,
+      };
+      // console.log(hbsObject);
+      //update with correct handlebars link
+      res.json(hbsObject);
+      //res.render("index", hbsObject);
     });
   });
 
