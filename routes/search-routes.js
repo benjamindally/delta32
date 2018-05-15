@@ -33,10 +33,23 @@ module.exports = function(app) {
       let hbsObject = {
         videos: result,
       };
-      console.log(hbsObject);
+      // console.log(hbsObject);
       //update with correct handlebars link
+      // res.json(hbsObject);
       res.render("index", hbsObject);
-      //res.json(hbsObject);
+    });
+  });
+  app.get("/json", function(req, res) {
+    db.Video.findAll({
+      include: [db.Contributor],
+    }).then(function(result) {
+      let hbsObject = {
+        videos: result,
+      };
+      // console.log(hbsObject);
+      //update with correct handlebars link
+      res.json(hbsObject);
+      //res.render("index", hbsObject);
     });
   });
 
@@ -94,7 +107,7 @@ module.exports = function(app) {
       let hbsObject = {
         videos: result,
       };
-      console.log(hbsObject);
+      // console.log(hbsObject);
       // update with correct handlebars link
       res.render("search", hbsObject);
       //res.json(hbsObject);
@@ -187,15 +200,16 @@ module.exports = function(app) {
 
   //also working as of 5/10
   app.post("/api/videos", function(req, res) {
+    var videoInfo = req.body;
     db.Video.create({
-      title: "movieTitleTest",
-      description: "this is a video test",
-      link: "fakelinkhere",
-      category: "medical",
-      keywordOne: "eyballs",
-      keywordTwo: "tatas",
-      keywordThree: "boogaboo",
-      ContributorId: 1,
+      title: videoInfo.title,
+      description: videoInfo.description,
+      link: videoInfo.link,
+      category: videoInfo.category,
+      keywordOne: videoInfo.keywordOne,
+      keywordTwo: videoInfo.keywordTwo,
+      keywordThree: videoInfo.keywordThree,
+      ContributorId: videoInfo.ContributorId,
     }).then(function(newVideo) {
       res.json(newVideo);
     });

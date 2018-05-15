@@ -10,6 +10,10 @@ var bodyParser = require("body-parser");
 // =============================================================
 require("dotenv").config();
 
+//jQuery-autocomplete
+//var jqueryAutocomplete = require("jquery-autocomplete");
+//==============================================================
+
 //Passport Dependencies
 // =============================================================
 var passport = require("passport");
