@@ -1,67 +1,66 @@
-//js file
 $(function() {
-  var videoInfo;
+  var keywordArray = [];
+  var titleArray = [];
+  var cleanArray = [];
+  var searchArray = [];
+  var cleanTitle = [];
+  var contributorArray = [];
+  var cleanContributor = [];
+  $.get("/json", function(data) {
+    console.log(data);
+    for (var i = 0; i < data.videos.length; i++) {
+      var keywordOne = data.videos[i].keywordOne;
+      keywordArray.push(keywordOne);
 
-  $(".submit").on("click", function(event) {
-    event.preventDefault();
-    var title = $("#title")
-      .val()
-      .trim();
-    var description = $("#description")
-      .val()
-      .trim();
-    var category = $("#category").val();
-    var keywordOne = $("#keyword1")
-      .val()
-      .trim();
-    var keywordTwo = $("#keyword2")
-      .val()
-      .trim();
-    var keywordThree = $("#keyword3")
-      .val()
-      .trim();
-    var ContributorId = $(".submit").attr("value");
+      var keywordTwo = data.videos[i].keywordTwo;
 
-    var videoInfo = {
-      title: title,
-      description: description,
-      link: "Unknown",
-      category: category,
-      keywordOne: keywordOne,
-      keywordTwo: keywordTwo,
-      keywordThree: keywordThree,
-      ContributorId: ContributorId,
-    };
+      if (keywordTwo != "") {
+        keywordArray.push(keywordTwo);
+      }
 
-    if (title === "") {
-      alert("Please enter a title for your video.");
-      return;
-    } else if (description === "") {
-      alert("Please enter a description for your video.");
-      return;
-    } else if (category === "Choose one...") {
-      alert("Please select a category");
-      return;
-    } else if (keywordOne === "") {
-      alert("Please enter the first keyword.");
-      return;
-    } else {
-      console.log(videoInfo);
-      $.post("api/videos", videoInfo).then(function(newVideo) {
-        console.log(newVideo);
-        clearInputs();
+      var keywordThree = data.videos[i].keywordThree;
+      if (keywordThree != "") {
+        keywordArray.push(keywordThree);
+      }
+
+      var title = data.videos[i].title;
+      titleArray.push(title);
+
+      var contributor = data.videos[i].Contributor.name;
+      contributorArray.push(contributor);
+
+      cleanArray.text = keywordArray.filter(function(elem, pos) {
+        return keywordArray.indexOf(elem) == pos;
+      });
+
+      cleanTitle.text = titleArray.filter(function(elem, pos) {
+        return titleArray.indexOf(elem) == pos;
+      });
+
+      cleanContributor.text = contributorArray.filter(function(elem, pos) {
+        return contributorArray.indexOf(elem) == pos;
       });
     }
+    for (var j = 0; j < cleanArray.text.length; j++) {
+      var cleanObject = cleanArray.text[j];
+      searchArray.push({ id: "keyword", text: cleanObject });
+    }
+
+    for (var l = 0; l < cleanTitle.text.length; l++) {
+      var cleanObject2 = cleanTitle.text[l];
+      searchArray.push({ id: "title", text: cleanObject2 });
+    }
+
+    for (var x = 0; x < cleanContributor.text.length; x++) {
+      var cleanObject3 = cleanContributor.text[x];
+      searchArray.push({ id: "contributor", text: cleanObject3 });
+    }
+
+    $(".search_bar").select2({ data: searchArray });
+    console.log(searchArray);
   });
 
-  function clearInputs() {
-    $("#title").val("");
-    $("#description").val("");
-    $("#category").val("Choose one...");
-    $("#keyword1").val("");
-    $("#keyword2").val("");
-    $("#keyword3").val("");
-  }
+  $.get("/", function(data) {});
 });
 
 //Mission button scroll function
