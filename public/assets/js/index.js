@@ -61,14 +61,25 @@ $(function() {
   });
 
   $.get("/", function(data) {});
-});
 
-//Mission button scroll function
-$("#missionBtn").click(function() {
-  $("html,body").animate(
-    {
-      scrollTop: $("#mission").offset().top,
-    },
-    "slow"
-  );
+  //Mission button scroll function
+  $("#missionBtn").click(function() {
+    $("html,body").animate(
+      {
+        scrollTop: $("#mission").offset().top,
+      },
+      "slow"
+    );
+  });
+
+  $("#nav_search_btn").click(function() {
+    var searchTerm = $(".search_bar").select2("data");
+    // console.log(searchTerm[0].text);
+    var query = "/api/videos/keyword/" + searchTerm[0].text;
+    console.log(query);
+
+    if (searchTerm[0].id === "keyword") {
+      $.get("/api/videos/keyword/tatas", function(data) {});
+    }
+  });
 });
