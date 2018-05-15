@@ -62,3 +62,13 @@ $(function() {
 
   $.get("/", function(data) {});
 });
+
+//Mission button scroll function
+$("#missionBtn").click(function() {
+  $("html,body").animate(
+    {
+      scrollTop: $("#mission").offset().top,
+    },
+    "slow"
+  );
+});
