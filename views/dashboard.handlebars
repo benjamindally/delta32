@@ -3,7 +3,7 @@
 <script type="text/javascript" src="assets/js/dashboard.js"></script>
 <div class="no-gutter">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand ml-1" href="#">Delta 32</a>
+        <a class="navbar-brand ml-1" href="/">Delta 32</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
             aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -43,26 +43,24 @@
         </div>
     </nav>
 </div>
-
+<br>
 <div class="container main">
     <div class="row">
-        <div class="col-sm-5">
+        <div class="col-sm-8">
             {{!-- ziggeo video goes herestyle="width: 18rem; --}}
             <div class="cards">
                 <div class="ziggeo">
-
-                    <div id="recorder">
-
+                    <div id = "recorder" >
+                        </div>
 
                     </div>
-
                 </div>
             </div>
 
 
             {{!--tips and tricks go here--}}
-            <div class="cards help">
-                <h3>Tips & Tricks</h3>
+            <div class="cards help col-sm-4">
+                <h3>Instructions</h3>
                 <p>Click the record button to begin your recording. Once you are finished filming your video, press the stop
                     button. </p>
                 <p>Please fill out a title, description, category and at least one keyword. Once you are finished, click the
@@ -70,7 +68,8 @@
             </div>
         </div>
         {{!-- Video Form --}}
-        <div class="col-sm-7">
+<div class="row table-form">
+     <div class="col-sm-12">
             <form class="form">
                 <div class="form-row">
                     <div class="form-group col-md-12">
@@ -125,10 +124,12 @@
     </div>
 </div>
 
+
+
 {{!-- footer --}}
 <footer class="footer">
     <span class="text-muted"></span>
-    <a class="brand" href="#">Delta 32</a>
+    <a class="brand" href="/">Delta 32</a>
     <a class="links"> || </a>
     <a class="links" href="#">About </a>
     <a class="links" href="#">Careers </a>
