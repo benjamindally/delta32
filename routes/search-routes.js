@@ -133,7 +133,7 @@ module.exports = function(app) {
       //   console.log(hbsObject);
       //update with correct handlebars link
       res.render("search", hbsObject);
-      //res.json(hbsObject);
+      // res.json(hbsObject);
     });
   });
 
