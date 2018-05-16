@@ -59,14 +59,14 @@ $(function() {
   $.get("/", function(data) {});
 
   //Mission button scroll function
-  $("#missionBtn").click(function() {
-    $("html,body").animate(
-      {
-        scrollTop: $("#mission").offset().top,
-      },
-      "slow"
-    );
-  });
+  // $("#missionBtn").click(function() {
+  //   $("html,body").animate(
+  //     {
+  //       scrollTop: $("#mission").offset().top,
+  //     },
+  //     "slow"
+  //   );
+  // });
 
   // $("#nav_search_btn").click(function() {
   //   var searchTerm = $(".search_bar").select2("data");
