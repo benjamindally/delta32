@@ -175,22 +175,6 @@ module.exports = function(app) {
       res.json(newVideo);
     });
   });
-  // app.post("/api/videos", function(req, res) {
-  //   var videoInfo = req.body;
-  //   db.Video.create({
-  //     title: "dummy",
-  //     description: "test",
-  //     token: "09809mmdsn",
-  //     category: "Environment",
-  //     keywordOne: "Relaxation",
-  //     keywordTwo: "Self-Esteem",
-  //     keywordThree: "videoInfo.keywordThree",
-  //     ContributorId: 1,
-  //   }).then(function(newVideo) {
-  //     res.json(newVideo);
-  //   });
-  // });
-  //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   //export function ends
 };
