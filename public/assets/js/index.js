@@ -56,7 +56,7 @@ $(function() {
     console.log(searchArray);
   });
 
-  $.get("/", function(data) {});
+  // $.get("/", function(data) {});
 
   //Mission button scroll function
   // $("#missionBtn").click(function() {
@@ -88,15 +88,15 @@ $(function() {
         if (searchTerm === array[i]) {
           if (array === keywordArray) {
             queryUrl = "/api/videos/keyword/" + searchTerm;
-            // console.log(queryUrl);
+            console.log(queryUrl);
             window.location.href = queryUrl;
           } else if (array === titleArray) {
             queryUrl = "/api/videos/" + searchTerm;
-            // console.log(queryUrl);
+            console.log(queryUrl);
             window.location.href = queryUrl;
           } else if (array === contributorArray) {
             queryUrl = "/api/videos/contributor/" + searchTerm;
-            // console.log(queryUrl);
+            console.log(queryUrl);
             window.location.href = queryUrl;
           }
         }
