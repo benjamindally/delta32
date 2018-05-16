@@ -165,7 +165,7 @@ module.exports = function(app) {
     db.Video.create({
       title: videoInfo.title,
       description: videoInfo.description,
-      link: videoInfo.link,
+      token: videoInfo.token,
       category: videoInfo.category,
       keywordOne: videoInfo.keywordOne,
       keywordTwo: videoInfo.keywordTwo,
