@@ -81,12 +81,16 @@
     </div>
     {{!-- RESULTS COLUMN --}}
     <div class="col-sm-6">
-        {{#each video}}
-        <a class="vid-box" href="/posts/{{../permalink}}#{{id}}">
-            <img class="thumbnail" src="{{thumb}}" alt="doctor">
-            <h3 class="vid-title">{{title}}</h3>
-            <p class="vid-desc">{{desc}}</p>
-        </a>
+        <ul>{{#each videos}}
+            <li>
+                {{!--
+                <a class="vid-box" href="/posts/{{../permalink}}#{{id}}">
+                    <img class="thumbnail" src="{{thumb}}" alt="doctor"> --}}
+                    <h3 class="video-link vid-title" id={{this.id}}>{{this.title}}</h3>
+                    <p class="video-link vid-desc" id={{this.id}}>{{this.description}}</p>
+                    {{!-- </a> --}}
+            </li>
+        </ul>
         {{/each}}
     </div>
     <div class="col-sm-3 text-center">
@@ -106,6 +110,7 @@
     <span class="text-muted"></span>
     <a class="brand" href="/">Delta 32</a>
     <a class="links"> || </a>
+    <a class="links" href="#">About </a>
     <a class="links" href="/careers">Careers </a>
     <a class="links" href="/dashboard">Contrubitors </a>
     </span>
