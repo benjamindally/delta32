@@ -155,47 +155,8 @@ module.exports = function(app) {
     });
   });
 
-  //Contributor registration route
-  //add data set if needed
-  //change handlebars file name
-  app.get("/register", function(req, res) {
-    res.render("signup");
-  });
-
-  //Contributor login route
-  //add data set if needed
-  //change handlebars file name
-
-  app.get("/login", function(req, res) {
-    res.render("user_login");
-  });
-  //User login route
-
-  //Post Routes
-  //will be taken care of once we decide how to handle
-  //authentication
-
-  //post routes for testing
-  //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  //HOW TO TEST A ROUTE
-  //comment out all active code in the .then of the route to test
-  //uncomment res.json(result);
-  //Use postman to post to contributor, then
-  //use postman to post to videos.
-  //Order matters here or the foreign key will be null.
-  //Use postman to test a given search route.
-  //If you're using nodemon and you save a change,
-  //you will have to run the two post routes again before testing.
-
-  //working as of 5/10
-  app.post("/api/contributor", function(req, res) {
-    db.Contributor.create({
-      name: "test2guy",
-      specialty: "dirt",
-      title: "Dr.",
-    }).then(function(newCont) {
-      res.json(newCont);
-    });
+  app.get("/careers", function(req, res) {
+    res.render("careers");
   });
 
   //also working as of 5/10
