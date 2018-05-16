@@ -25,10 +25,10 @@
         })
     </script>
     <script>
-        ZiggeoApi.Events.on("submitted", function (data) {
             ZiggeoApi.Events.on("submitted", function (data) { var link = data.video.token; $("#videoLink").val(link); });
-        });
-        ZiggeoApi.Config.webrtc = true;
+             ZiggeoApi.Config.webrtc = true;
+
+
     </script>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
