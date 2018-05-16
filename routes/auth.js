@@ -1,5 +1,6 @@
 var authController = require("../controller/authcontroller.js");
 
+//auth routes verified with passport and bcrypt
 module.exports = function(app, passport) {
   app.get("/signup", authController.signup);
 
