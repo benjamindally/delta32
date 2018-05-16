@@ -1,59 +1,55 @@
 $(function() {
   var keywordArray = [];
   var titleArray = [];
-  var cleanArray = [];
-  var searchArray = [];
-  var cleanTitle = [];
   var contributorArray = [];
-  var cleanContributor = [];
+  var searchArray = [];
+
   $.get("/json", function(data) {
-    console.log(data);
+    //Make sure there are no duplicates and sort data into
+    //a specific array and a main autocomplete array
+    function dataSort(sortedArray, acArray) {
+      var isRepeat = false;
+      if (acArray.length > 0) {
+        for (var j = 0; j < acArray.length; j++) {
+          if (datapoint === acArray[j]) {
+            isRepeat = true;
+          }
+        }
+      }
+      console.log(isRepeat);
+      if (isRepeat === false) {
+        sortedArray.push(datapoint);
+        acArray.push(datapoint);
+      }
+    }
+
     for (var i = 0; i < data.videos.length; i++) {
-      var keywordOne = data.videos[i].keywordOne;
-      keywordArray.push(keywordOne);
+      var datapoint = data.videos[i].keywordOne;
+      dataSort(keywordArray, searchArray);
+    }
 
-      var keywordTwo = data.videos[i].keywordTwo;
-
-      if (keywordTwo != "") {
-        keywordArray.push(keywordTwo);
+    for (var i = 0; i < data.videos.length; i++) {
+      var datapoint = data.videos[i].keywordTwo;
+      if (datapoint !== "") {
+        dataSort(keywordArray, searchArray);
       }
+    }
 
-      var keywordThree = data.videos[i].keywordThree;
-      if (keywordThree != "") {
-        keywordArray.push(keywordThree);
+    for (var i = 0; i < data.videos.length; i++) {
+      var datapoint = data.videos[i].keywordThree;
+      if (datapoint !== "") {
+        dataSort(keywordArray, searchArray);
       }
-
-      var title = data.videos[i].title;
-      titleArray.push(title);
-
-      var contributor = data.videos[i].Contributor.name;
-      contributorArray.push(contributor);
-
-      cleanArray.text = keywordArray.filter(function(elem, pos) {
-        return keywordArray.indexOf(elem) == pos;
-      });
-
-      cleanTitle.text = titleArray.filter(function(elem, pos) {
-        return titleArray.indexOf(elem) == pos;
-      });
-
-      cleanContributor.text = contributorArray.filter(function(elem, pos) {
-        return contributorArray.indexOf(elem) == pos;
-      });
-    }
-    for (var j = 0; j < cleanArray.text.length; j++) {
-      var cleanObject = cleanArray.text[j];
-      searchArray.push({ id: "keyword", text: cleanObject });
     }
 
-    for (var l = 0; l < cleanTitle.text.length; l++) {
-      var cleanObject2 = cleanTitle.text[l];
-      searchArray.push({ id: "title", text: cleanObject2 });
+    for (var i = 0; i < data.videos.length; i++) {
+      var datapoint = data.videos[i].title;
+      dataSort(titleArray, searchArray);
     }
 
-    for (var x = 0; x < cleanContributor.text.length; x++) {
-      var cleanObject3 = cleanContributor.text[x];
-      searchArray.push({ id: "contributor", text: cleanObject3 });
+    for (var i = 0; i < data.videos.length; i++) {
+      var datapoint = data.videos[i].Contributor.name;
+      dataSort(contributorArray, searchArray);
     }
 
     $(".search_bar").select2({ data: searchArray });
@@ -63,23 +59,83 @@ $(function() {
   $.get("/", function(data) {});
 
   //Mission button scroll function
-  $("#missionBtn").click(function() {
-    $("html,body").animate(
-      {
-        scrollTop: $("#mission").offset().top,
-      },
-      "slow"
-    );
-  });
+  // $("#missionBtn").click(function() {
+  //   $("html,body").animate(
+  //     {
+  //       scrollTop: $("#mission").offset().top,
+  //     },
+  //     "slow"
+  //   );
+  // });
 
-  $("#nav_search_btn").click(function() {
-    var searchTerm = $(".search_bar").select2("data");
-    // console.log(searchTerm[0].text);
-    var query = "/api/videos/keyword/" + searchTerm[0].text;
-    console.log(query);
+  // $("#nav_search_btn").click(function() {
+  //   var searchTerm = $(".search_bar").select2("data");
+  //   // console.log(searchTerm[0].text);
+  //   var query = "/api/videos/keyword/" + searchTerm[0].text;
+  //   console.log(query);
 
-    if (searchTerm[0].id === "keyword") {
-      $.get("/api/videos/keyword/tatas", function(data) {});
+  //   if (searchTerm[0].id === "keyword") {
+  //     $.get("/api/videos/keyword/tatas", function(data) {});
+  //   }
+  // });
+  $("#nav_search_btn").on("click", function(event) {
+    event.preventDefault();
+    var searchTerm = $(".search_bar")
+      .find(":selected")
+      .text();
+    function findSearchRoute(array, searchTerm) {
+      for (var i = 0; i < array.length; i++) {
+        if (searchTerm === array[i]) {
+          if (array === keywordArray) {
+            queryUrl = "/api/videos/keyword/" + searchTerm;
+            // console.log(queryUrl);
+            window.location.href = queryUrl;
+          } else if (array === titleArray) {
+            queryUrl = "/api/videos/" + searchTerm;
+            // console.log(queryUrl);
+            window.location.href = queryUrl;
+          } else if (array === contributorArray) {
+            queryUrl = "/api/videos/contributor/" + searchTerm;
+            // console.log(queryUrl);
+            window.location.href = queryUrl;
+          }
+        }
+      }
     }
+
+    function routeSearch(searchTerm) {
+      findSearchRoute(keywordArray, searchTerm);
+      findSearchRoute(titleArray, searchTerm);
+      findSearchRoute(contributorArray, searchTerm);
+    }
+
+    routeSearch(searchTerm);
+    // queryUrl = "/api/videos/keyword/" + searchTerm;
+    // window.location.href = queryUrl;
   });
 });
+
+// function findSearchRoute(array, searchTerm) {
+//   for (var i = 0; i < array.length; i++) {
+//     if (searchTerm === array[i]) {
+//       if (array === keywordArray) {
+//         queryUrl = "/api/videos/keyword/" + searchTerm;
+//         console.log(queryUrl);
+//       } else if (array === titleArray) {
+//         queryUrl = "/api/videos/" + searchTerm;
+//         console.log(queryUrl);
+//       } else if (array === contributorArray) {
+//         queryUrl = "/api/videos/contributor/" + searchTerm;
+//         console.log(queryUrl);
+//       }
+//     }
+//   }
+// }
+
+// function routeSearch(searchTerm) {
+//   findSearchRoute(keywordArray, searchTerm);
+//   findSearchRoute(titleArray, searchTerm);
+//   findSearchRoute(contributorArray, searchTerm);
+// }
+
+// routeSearch(searchTerm);

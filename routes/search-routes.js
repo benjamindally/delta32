@@ -159,7 +159,7 @@ module.exports = function(app) {
   //add data set if needed
   //change handlebars file name
   app.get("/register", function(req, res) {
-    res.render("user_login");
+    res.render("signup");
   });
 
   //Contributor login route
@@ -169,16 +169,7 @@ module.exports = function(app) {
   app.get("/login", function(req, res) {
     res.render("user_login");
   });
-
-  app.get("/careers", function(req, res) {
-    res.render("careers");
-  });
   //User login route
-
-  //To display mission page here
-  app.get("/mission", function (req, res) {
-    res.render("mission");
-  });
 
   //Post Routes
   //will be taken care of once we decide how to handle

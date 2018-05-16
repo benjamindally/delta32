@@ -4,7 +4,7 @@ $(document).ready(function() {
   $("#missionBtn").click(function() {
     $("html,body").animate(
       {
-        scrollTop: $("#mission").offset().top,
+        scrollTop: $("#what-we-do").offset().top,
       },
       "slow"
     );
