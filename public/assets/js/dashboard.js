@@ -2,6 +2,8 @@
 $(function() {
   $(".submit").on("click", function(event) {
     event.preventDefault();
+
+    //this stores the values from the form as variables
     var title = $("#title")
       .val()
       .trim();
@@ -23,6 +25,7 @@ $(function() {
       .trim();
     var ContributorId = $(".submit").attr("value");
 
+    //this creates a model based on the varibles created from the form
     var videoInfo = {
       title: title,
       description: description,
@@ -34,6 +37,7 @@ $(function() {
       ContributorId: ContributorId,
     };
 
+    //this handles errors if something has not been entered and alerts the user to what they are missing
     if (title === "") {
       alert("Please enter a title for your video.");
       return;
@@ -53,6 +57,7 @@ $(function() {
     }
   });
 
+  //this clears the form fields so users can create another video easily
   function clearInputs() {
     $("#title").val("");
     $("#description").val("");
