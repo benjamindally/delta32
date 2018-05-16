@@ -1,6 +1,6 @@
-/* search page CSS */
 body {
-  background-color: #a7a0a00f;
+  background: #d9e7ff;
+  background: linear-gradient(90deg, #d9e7ff 0%, hsl(225, 17%, 95%) 100%);
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -91,8 +91,8 @@ nav {
 
 /* footer */
 .footer {
+  position: relative;
   height: 50px;
-  position: static;
   left: 0;
   bottom: 0;
   width: 100%;

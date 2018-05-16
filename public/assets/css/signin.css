@@ -10,7 +10,7 @@ body {
 nav {
   z-index: 1;
   position: fixed !important;
-  height: 8vh;
+  height: 3.1em;
   top: 0px;
   left: 0;
   right: 0;
