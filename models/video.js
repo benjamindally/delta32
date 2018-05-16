@@ -12,7 +12,7 @@ module.exports = function(sequelize, DataTypes) {
       validate: { len: [3, 140] },
     },
 
-    link: {
+    token: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: { len: [1] },
