@@ -45,13 +45,6 @@ app.use(passport.session()); // persistent login sessions
 //For Handlebars
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
-// app.set("views", "./app/views");
-// app.engine("hbs", exphbs({ extname: ".handlebars" }));
-// app.set("view engine", ".handlebars");
-
-// app.get("/", function(req, res) {
-//   res.send("Welcome to Passport with Sequelize");
-// });
 
 // Static directory
 app.use(express.static("public"));

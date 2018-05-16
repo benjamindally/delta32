@@ -1,31 +1,15 @@
 //import models
 const db = require("../models");
 const Op = db.sequelize.Op;
-// const express = require("express");
-
-//Routes
-
-//DEV NOTE
-//Table Names and Table Keys are currently PLACEHOLDERS
-//They need to be updated for actual use
-//Same is true of Handlebars Page Names
-//Testing instructions and test post routes are at the bottom of the page
-
-//root route
-//find featured
-//switched from finding featured to finding all
-//switch is to support auto-complete npm package.
-//code determining featured and tag list relegated to front-end
 
 module.exports = function(app) {
-  //root route
-
+  //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   //root to get the api token
   app.get("/ziggeoToken", function(req, res) {
     res.json(process.env.api_token);
   });
 
-  //working route as of 5/10
+  //root route for onload
   app.get("/", function(req, res) {
     db.Video.findAll({
       include: [db.Contributor],
@@ -33,12 +17,11 @@ module.exports = function(app) {
       let hbsObject = {
         videos: result,
       };
-      // console.log(hbsObject);
-      //update with correct handlebars link
-      // res.json(hbsObject);
       res.render("index", hbsObject);
     });
   });
+
+  //json route
   app.get("/json", function(req, res) {
     db.Video.findAll({
       include: [db.Contributor],
@@ -46,36 +29,24 @@ module.exports = function(app) {
       let hbsObject = {
         videos: result,
       };
-      // console.log(hbsObject);
-      //update with correct handlebars link
       res.json(hbsObject);
-      //res.render("index", hbsObject);
     });
   });
 
   //Search Routes
   //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-  //find all videos
-  //include user list
-
-  //working route 5/10
+  //find all route
   app.get("/api/videos", function(req, res) {
     db.Video.findAll({
       include: [db.Contributor],
     }).then(function(result) {
-      // res.json(result);
       let hbsObject = {
         videos: result,
       };
-
-      //update with correct handlebars link
       res.render("search", hbsObject);
-      //res.json(hbsObject);
     });
   });
 
-  //working route as of 5/10
   //find all videos with a given title
   app.get("/api/videos/:title", function(req, res) {
     db.Video.findAll({
@@ -87,16 +58,11 @@ module.exports = function(app) {
       let hbsObject = {
         videos: result,
       };
-      // console.log(result);
-      //update with correct handlebars link
       res.render("search", hbsObject);
-      //res.json(hbsObject);
     });
   });
 
-  //working as of 5/10
   //find all videos with a given author
-  //include video list
   app.get("/api/videos/contributor/:author", function(req, res) {
     db.Contributor.findAll({
       where: {
@@ -107,10 +73,7 @@ module.exports = function(app) {
       let hbsObject = {
         videos: result,
       };
-      // console.log(hbsObject);
-      // update with correct handlebars link
       res.render("search", hbsObject);
-      //res.json(hbsObject);
     });
   });
 
@@ -125,14 +88,10 @@ module.exports = function(app) {
       let hbsObject = {
         videos: result,
       };
-      // console.log(result);
-      //update with correct handlebars link
       res.render("video", hbsObject);
-      //res.json(hbsObject);
     });
   });
 
-  //working as of 5/10
   //find all videos with a given tag
   app.get("/api/videos/keyword/:keyword", function(req, res) {
     db.Video.findAll({
@@ -148,14 +107,11 @@ module.exports = function(app) {
       let hbsObject = {
         videos: result,
       };
-      //   console.log(hbsObject);
-      //update with correct handlebars link
       res.render("search", hbsObject);
-      // res.json(hbsObject);
     });
   });
 
-  //working as of 5/10
+  //find videos by category
   app.get("/api/videos/category/:category", function(req, res) {
     db.Video.findAll({
       where: {
@@ -166,18 +122,18 @@ module.exports = function(app) {
       let hbsObject = {
         videos: result,
       };
-      //   console.log(hbsObject);
-      //update with correct handlebars link
       res.render("search", hbsObject);
-      //res.json(hbsObject);
     });
   });
 
+  //renders career page
   app.get("/careers", function(req, res) {
     res.render("careers");
   });
 
-  //also working as of 5/10
+  //Post route
+  //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  //post new video column
   app.post("/api/videos", function(req, res) {
     var videoInfo = req.body;
     db.Video.create({

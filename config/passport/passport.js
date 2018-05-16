@@ -1,5 +1,8 @@
 //load bcrypt
 var bCrypt = require("bcrypt-nodejs");
+//passport used for user authentication
+//local auth only, email+password
+//bcrypt used for encryption
 
 module.exports = function(passport, user) {
   var User = user;

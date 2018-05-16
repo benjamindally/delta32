@@ -52,37 +52,18 @@ $(function() {
       dataSort(contributorArray, searchArray);
     }
 
+    //integrate select2 autocomplete package with search bar
     $(".search_bar").select2({ data: searchArray });
     console.log(searchArray);
   });
 
-  // $.get("/", function(data) {});
-
-  //Mission button scroll function
-  // $("#missionBtn").click(function() {
-  //   $("html,body").animate(
-  //     {
-  //       scrollTop: $("#mission").offset().top,
-  //     },
-  //     "slow"
-  //   );
-  // });
-
-  // $("#nav_search_btn").click(function() {
-  //   var searchTerm = $(".search_bar").select2("data");
-  //   // console.log(searchTerm[0].text);
-  //   var query = "/api/videos/keyword/" + searchTerm[0].text;
-  //   console.log(query);
-
-  //   if (searchTerm[0].id === "keyword") {
-  //     $.get("/api/videos/keyword/tatas", function(data) {});
-  //   }
-  // });
+  //process search requests and redirect to search page
   $("#nav_search_btn").on("click", function(event) {
     event.preventDefault();
     var searchTerm = $(".search_bar")
       .find(":selected")
       .text();
+    //function to determine which route to use
     function findSearchRoute(array, searchTerm) {
       for (var i = 0; i < array.length; i++) {
         if (searchTerm === array[i]) {
@@ -102,7 +83,7 @@ $(function() {
         }
       }
     }
-
+    //check all routes
     function routeSearch(searchTerm) {
       findSearchRoute(keywordArray, searchTerm);
       findSearchRoute(titleArray, searchTerm);
@@ -110,32 +91,5 @@ $(function() {
     }
 
     routeSearch(searchTerm);
-    // queryUrl = "/api/videos/keyword/" + searchTerm;
-    // window.location.href = queryUrl;
   });
 });
-
-// function findSearchRoute(array, searchTerm) {
-//   for (var i = 0; i < array.length; i++) {
-//     if (searchTerm === array[i]) {
-//       if (array === keywordArray) {
-//         queryUrl = "/api/videos/keyword/" + searchTerm;
-//         console.log(queryUrl);
-//       } else if (array === titleArray) {
-//         queryUrl = "/api/videos/" + searchTerm;
-//         console.log(queryUrl);
-//       } else if (array === contributorArray) {
-//         queryUrl = "/api/videos/contributor/" + searchTerm;
-//         console.log(queryUrl);
-//       }
-//     }
-//   }
-// }
-
-// function routeSearch(searchTerm) {
-//   findSearchRoute(keywordArray, searchTerm);
-//   findSearchRoute(titleArray, searchTerm);
-//   findSearchRoute(contributorArray, searchTerm);
-// }
-
-// routeSearch(searchTerm);
