@@ -114,6 +114,24 @@ module.exports = function(app) {
     });
   });
 
+  //find video column by ID
+  app.get("/api/videos/:id", function(req, res) {
+    db.Video.findOne({
+      where: {
+        id: req.params.id,
+      },
+      include: [db.Contributor],
+    }).then(function(result) {
+      let hbsObject = {
+        videos: result,
+      };
+      // console.log(result);
+      //update with correct handlebars link
+      res.render("video", hbsObject);
+      //res.json(hbsObject);
+    });
+  });
+
   //working as of 5/10
   //find all videos with a given tag
   app.get("/api/videos/keyword/:keyword", function(req, res) {
