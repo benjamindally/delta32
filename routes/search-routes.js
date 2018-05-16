@@ -70,8 +70,8 @@ module.exports = function(app) {
       };
 
       //update with correct handlebars link
-      res.render("search", hbsObject);
-      // res.json(hbsObject);
+      // res.render("search", hbsObject);
+      res.json(hbsObject);
     });
   });
 
@@ -158,17 +158,17 @@ module.exports = function(app) {
   //Contributor registration route
   //add data set if needed
   //change handlebars file name
-  app.get("/register", function(req, res) {
-    res.render("user_login");
-  });
+  // app.get("/register", function(req, res) {
+  //   res.render("signup");
+  // });
 
   //Contributor login route
   //add data set if needed
   //change handlebars file name
 
-  app.get("/login", function(req, res) {
-    res.render("user_login");
-  });
+  // app.get("/login", function(req, res) {
+  //   res.render("user_login");
+  // });
   //User login route
 
   //Post Routes
@@ -188,15 +188,15 @@ module.exports = function(app) {
   //you will have to run the two post routes again before testing.
 
   //working as of 5/10
-  app.post("/api/contributor", function(req, res) {
-    db.Contributor.create({
-      name: "test2guy",
-      specialty: "dirt",
-      title: "Dr.",
-    }).then(function(newCont) {
-      res.json(newCont);
-    });
-  });
+  // app.post("/api/contributor", function(req, res) {
+  //   db.Contributor.create({
+  //     name: "test2guy",
+  //     specialty: "dirt",
+  //     title: "Dr.",
+  //   }).then(function(newCont) {
+  //     res.json(newCont);
+  //   });
+  // });
 
   //also working as of 5/10
   app.post("/api/videos", function(req, res) {
