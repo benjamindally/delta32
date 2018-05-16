@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="assets/css/index.css">
 <link rel="stylesheet" href="assets/css/whatwedo.css">
+
 <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
 <script type="text/javascript" src="assets/js/index.js"></script>
@@ -15,7 +16,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto mr-4">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Featured
+                    <a class="nav-link" href="/api/videos/featured">Featured
                     </a>
                 </li>
                 <li class="nav-item dropdown">
@@ -24,22 +25,23 @@
                         Categories
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Medical</a>
+                        <a class="dropdown-item" href="/api/videos/category/medical">Medical</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Environmental</a>
+                        <a class="dropdown-item" href="/api/videos/category/environmental">Environmental</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Lifestyle</a>
+                        <a class="dropdown-item" href="/api/videos/category/lifestyle">Lifestyle</a>
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="missionBtn">Mission</a>
+                    <a class="nav-link" href="/#mission">Mission</a>
                 </li>
+             <li class="nav-item">
+                 <a class="nav-link" href="#zbwid-2de1d0d9">Contact Us</a>
+             </li>
             </ul>
 
             <form class="form-inline my-2 my-lg-0">
-                <select class="search_bar" data-placeholder="Search" type="search" placeholder="Search" aria-label="Search" style="width: 200px">
-                    <option></option>
-                </select>
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
 
                 <button class="btn btn-outline-success my-2 my-sm-0" id="nav_search_btn" type="submit">
                     <i class="fas fa-search"></i>
@@ -48,7 +50,6 @@
         </div>
     </nav>
 </div>
-
 {{!--carousel--}}
 <div class="row fullview">
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -62,7 +63,7 @@
                                 Delta 32:
                                 <br> A Free Video Platform To Educate About Health & Environmental Issues And Lifestyle.
                             </h2>
-                            <h4 class="welcome_font_one">It's A Like Combination Of Youtube & WebMD</h4>
+                            <h4 class="welcome_font_one">It's Like A Combination Of Youtube & WebMD</h4>
                             <h6 class="welcome_font_one">But More Resourceful</h6>
                         </div>
                     </div>
@@ -74,10 +75,10 @@
                     <div class="row">
                         <div class="col-md-6"></div>
                         <div id="second_content" class="col-md-5">
-                            <h1 class="lobster">How Delicious</h1>
-                            <h2 class="lobster">Does This Food Look?</h2>
-                            <h6 class="shadowFont">I'd eat it. That reminds me I haven't eaten lunch yet...</h6>
-                            <h6 class="shadowFont">Break time!</h6>
+                            <h1 class="lobster">Learn About Lifestyle</h1>
+                            <h2 class="lobster">from certified nutrutionsts</h2>
+                            <br>
+                            <a href = "/" class="lobster links" >Click Here To Watch Videos</a>                       
                         </div>
                     </div>
                 </div>
@@ -87,8 +88,12 @@
                 <div id="third_slide">
                     <div class="row">
                         <div id="third_content" class="col-md-12 text-center">
-                            <h1 class="shrikhand">Helping You Live</h1>
-                            <h1 class="shrikhand">Your Best Life</h1>
+                            <br>
+                            <br>
+                            <h1 class="shrikhand">It's not too late</h1>
+                            <h1 class="shrikhand">SAVE THE PLANET</h1>
+                            <br>
+                            <a href="/" class="shrikhand">Click Here To Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -159,11 +164,10 @@
 {{!--footer--}}
 <footer class="footer">
     <span class="text-muted"></span>
-    <a class="brand" href="/">Delta 32</a>
+    <a class="brand" href="#">Delta 32</a>
     <a class="links"> || </a>
     <a class="links" href="#">About </a>
     <a class="links" href="#">Careers </a>
     <a class="links" href="/dashboard">Contributors </a>
-
     </span>
 </footer>

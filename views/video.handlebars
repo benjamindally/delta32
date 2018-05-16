@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="assets/css/vid.css">
+
 <div class="no-gutter">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand ml-1" href="/">Delta 32</a>
@@ -10,7 +11,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto mr-4">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Featured
+                    <a class="nav-link" href="/api/videos/featured">Featured
                     </a>
                 </li>
                 <li class="nav-item dropdown">
@@ -19,16 +20,19 @@
                         Categories
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Medical</a>
+                        <a class="dropdown-item" href="/api/videos/category/medical">Medical</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Environmental</a>
+                        <a class="dropdown-item" href="/api/videos/category/environmental">Environmental</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Lifestyle</a>
+                        <a class="dropdown-item" href="/api/videos/category/lifestyle">Lifestyle</a>
                     </div>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/#mission">Mission</a>
                 </li>
+                 <li class="nav-item">
+                     <a class="nav-link" href="#zbwid-2de1d0d9">Contact Us</a>
+                 </li>
             </ul>
 
             <form class="form-inline my-2 my-lg-0">
@@ -66,18 +70,13 @@
             <div class="side-card">
                 <div class="about">
                     <!-- info about the doctor goes here -->
-
-                    <!-- handlebars example -->
-                    <!-- <h1>Thanks To Our Contrubitor:</h1>
-                        <ul>
-                            <li>{{name}}</li>
-                            <li>{{specality}}</li>
-                            <li>{{...}}</li>
-                            <li>{{...}}</li>
-                        </ul> -->
-
                     <h1>Thanks To Our Contrubitor:</h1>
-                    <p>placeholder for doctors info</p>
+                    <ul>
+                        <li>{{name}}</li>
+                        <li>{{specality}}</li>
+                        <li>{{...}}</li>
+                        <li>{{...}}</li>
+                    </ul>
                 </div>
 
             </div>
@@ -92,7 +91,7 @@
     <a class="brand" href="/">Delta 32</a>
     <a class="links"> || </a>
     <a class="links" href="#">About </a>
-    <a class="links" href="#">Careers </a>
+    <a class="links" href="/careers">Careers </a>
     <a class="links" href="/dashboard">Contrubitors </a>
     </span>
 </footer>

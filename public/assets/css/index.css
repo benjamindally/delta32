@@ -104,7 +104,7 @@ nav {
 #third_slide {
   height: 100vh;
   width: 100vw;
-  background-image: url("../images/natureJump.jpg");
+  background-image: url("../images/planet.jpg");
   background-size: cover;
 }
 #third_content {
@@ -113,6 +113,8 @@ nav {
 
 .shrikhand {
   font-family: "Shrikhand", cursive;
+  color: white;
+  
 }
 
 .footer {
