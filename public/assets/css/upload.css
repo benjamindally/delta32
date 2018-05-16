@@ -8,7 +8,7 @@ body {
 
 /* Nav bar */
 nav {
-  z-index: 2;
+  z-index: 4;
   position: fixed !important;
   height: 8vh;
   top: 0px;
@@ -32,18 +32,20 @@ nav {
 }
 
 /* body */
-.row {
-  margin-top: 5em;
-}
 h3,
+h5,
 label {
   font-family: "Oswald", sans-serif;
 }
 p {
   font-size: 14px;
 }
+#recorder {
+  z-index: 1 !important;
+}
 
 .main {
+  z-index: 0;
   margin-top: 2em;
   margin-bottom: 2em;
 }
@@ -51,7 +53,7 @@ p {
   position: relative;
   background: #ffffff;
   max-width: 550px;
-  margin: 0 auto 40px;
+  margin: 0 auto 20px;
   padding: 30px;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
@@ -61,7 +63,7 @@ p {
   z-index: 1;
   background: #ffffff;
   max-width: 550px;
-  margin: 0 auto 50px;
+  margin: 0 auto 10px;
   padding: 45px;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
@@ -121,4 +123,36 @@ a {
   padding: 5px;
   text-decoration: none;
   color: black !important;
+}
+
+#logout {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #00d4ff;
+  background: linear-gradient(90deg, #0072ff 0%, #00d4ff 100%);
+  border: blue;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #ffffff;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+#logout:hover,
+#logout:active,
+#logout:focus {
+  background: linear-gradient(90deg, #00d4ff 0%, #0072ff 100%);
+}
+#logout-card {
+  text-align: center;
+  position: relative;
+  background: #ffffff;
+  max-width: 550px;
+  margin: 0 auto 40px;
+  padding: 20px;
+  padding-bottom: 10px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }

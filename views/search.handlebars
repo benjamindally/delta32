@@ -1,5 +1,6 @@
 {{!-- nav Bar --}}
-<link rel="stylesheet" type ="text/html" href="assets/css/search.css">
+<link rel="stylesheet" type="text/css" href="assets/css/search.css">
+
 <div class="no-gutter">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand ml-1" href="/">Delta 32</a>
@@ -11,7 +12,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto mr-4">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Featured
+                    <a class="nav-link" href="/api/videos/featured">Featured
                     </a>
                 </li>
                 <li class="nav-item dropdown">
@@ -20,11 +21,11 @@
                         Categories
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Medical</a>
+                        <a class="dropdown-item" href="/api/videos/category/medical">Medical</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Environmental</a>
+                        <a class="dropdown-item" href="/api/videos/category/environmental">Environmental</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Lifestyle</a>
+                        <a class="dropdown-item" href="/api/videos/category/lifestyle">Lifestyle</a>
                     </div>
                 </li>
                 <li class="nav-item">
@@ -34,8 +35,10 @@
                         <a class="nav-link" href="#zbwid-2de1d0d9">Contact Us</a>
                     </li>
             </ul>
+
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+
                 <button class="btn btn-outline-success my-2 my-sm-0" id="nav_search_btn" type="submit">
                     <i class="fas fa-search"></i>
                 </button>
@@ -52,7 +55,8 @@
                 <hr />
                 <p>Please go to our Go-fund-me page to keep our site going
                 </p>
-                <a href="https://www.gofundme.com/delta32org?sharetype=teams&member=173296&rcid=r01-152636415652-95db6a5758694bab&pc=ot_co_campmgmt_w" target="_blank" class="btn btn-block btn-primary">Go Fund Us</a>
+                <a href="https://www.gofundme.com/delta32org?sharetype=teams&member=173296&rcid=r01-152636415652-95db6a5758694bab&pc=ot_co_campmgmt_w"
+                    target="_blank" class="btn btn-block btn-primary">Go Fund Us</a>
             </div>
         </div>
         <br>
@@ -102,9 +106,7 @@
     <a class="brand" href="/">Delta 32</a>
     <a class="links"> || </a>
     <a class="links" href="#">About </a>
-    <a class="links" href="#">Careers </a>
-
+    <a class="links" href="/careers">Careers </a>
     <a class="links" href="/dashboard">Contrubitors </a>
-
     </span>
 </footer>

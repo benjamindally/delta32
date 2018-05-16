@@ -169,6 +169,10 @@ module.exports = function(app) {
   app.get("/login", function(req, res) {
     res.render("user_login");
   });
+
+  app.get("/careers", function(req, res) {
+    res.render("careers");
+  });
   //User login route
 
   //To display mission page here

@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="assets/css/index.css">
 <link rel="stylesheet" href="assets/css/whatwedo.css">
+
 <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
 <script type="text/javascript" src="assets/js/index.js"></script>
@@ -15,7 +16,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto mr-4">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Featured
+                    <a class="nav-link" href="/api/videos/featured">Featured
                     </a>
                 </li>
                 <li class="nav-item dropdown">
@@ -24,15 +25,15 @@
                         Categories
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Medical</a>
+                        <a class="dropdown-item" href="/api/videos/category/medical">Medical</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Environmental</a>
+                        <a class="dropdown-item" href="/api/videos/category/environmental">Environmental</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Lifestyle</a>
+                        <a class="dropdown-item" href="/api/videos/category/lifestyle">Lifestyle</a>
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="missionBtn">Mission</a>
+                    <a class="nav-link" href="/#mission">Mission</a>
                 </li>
              <li class="nav-item">
                  <a class="nav-link" href="#zbwid-2de1d0d9">Contact Us</a>
@@ -40,9 +41,7 @@
             </ul>
 
             <form class="form-inline my-2 my-lg-0">
-                <select class="search_bar" data-placeholder="Search" type="search" placeholder="Search" aria-label="Search" style="width: 200px">
-                    <option></option>
-                </select>
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
 
                 <button class="btn btn-outline-success my-2 my-sm-0" id="nav_search_btn" type="submit">
                     <i class="fas fa-search"></i>
@@ -51,7 +50,6 @@
         </div>
     </nav>
 </div>
-
 {{!--carousel--}}
 <div class="row fullview">
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -62,7 +60,8 @@
                     <div class="row">
                         <div id="welcome_content" class="col-md-3">
                             <h2 class="welcome_font_three">
-                                Delta 32: <br> A Free Video Platform To Educate About Health & Environmental Issues And Lifestyle.
+                                Delta 32:
+                                <br> A Free Video Platform To Educate About Health & Environmental Issues And Lifestyle.
                             </h2>
                             <h4 class="welcome_font_one">It's Like A Combination Of Youtube & WebMD</h4>
                             <h6 class="welcome_font_one">But More Resourceful</h6>
@@ -118,7 +117,8 @@
     <div class="container-fluid we-do-container">
 
         <h2 class="section-title mb-2 h1">What we do</h2>
-        <p class="text-center text-muted h5 card-text">OUR MISSION IS TO PROVIDE FREE MEDICAL ADVICE FROM REAL DOCTORS & <br> "SAVE THE PLANET" TIPS FROM SCIENTISTS & RESEARCHERS.</p>
+        <p class="text-center text-muted h5 card-text">OUR MISSION IS TO PROVIDE FREE MEDICAL ADVICE FROM REAL DOCTORS &
+            <br> "SAVE THE PLANET" TIPS FROM SCIENTISTS & RESEARCHERS.</p>
 
         <div class="row mt-5">
             <div class="col-sm-2"></div>
@@ -164,11 +164,10 @@
 {{!--footer--}}
 <footer class="footer">
     <span class="text-muted"></span>
-    <a class="brand" href="/">Delta 32</a>
+    <a class="brand" href="#">Delta 32</a>
     <a class="links"> || </a>
     <a class="links" href="#">About </a>
     <a class="links" href="#">Careers </a>
     <a class="links" href="/dashboard">Contributors </a>
-
     </span>
 </footer>
