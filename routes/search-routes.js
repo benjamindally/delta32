@@ -175,6 +175,11 @@ module.exports = function(app) {
   });
   //User login route
 
+  //To display mission page here
+  app.get("/mission", function (req, res) {
+    res.render("mission");
+  });
+
   //Post Routes
   //will be taken care of once we decide how to handle
   //authentication

@@ -1,5 +1,5 @@
 {{!-- css links --}}
-<link rel="stylesheet" href="assets/css/upload.css">
+<link rel="stylesheet" href="assets/css/mission.css">
 <script type="text/javascript" src="assets/js/dashboard.js"></script>
 <div class="no-gutter">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -12,7 +12,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto mr-4">
                 <li class="nav-item active">
-                    <a class="nav-link" href="/api/videos/featured">Featured
+                    <a class="nav-link" href="#">Featured
                     </a>
                 </li>
                 <li class="nav-item dropdown">
@@ -21,21 +21,17 @@
                         Categories
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/api/videos/category/medical">Medical</a>
+                        <a class="dropdown-item" href="#">Medical</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="/api/videos/category/environmental">Environmental</a>
+                        <a class="dropdown-item" href="#">Environmental</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="/api/videos/category/lifestyle">Lifestyle</a>
+                        <a class="dropdown-item" href="#">Lifestyle</a>
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/mission">Mission</a>
+                    <a class="nav-link" href="#">Mission</a>
                 </li>
-                <li class="nav-item">
-                <a class="nav-link" href="#zbwid-2de1d0d9">Contact Us</a>
-                 </li>
             </ul>
-
 
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -48,10 +44,9 @@
     </nav>
 </div>
 <br>
-<br>
 <div class="container main">
     <div class="row">
-        <div class="col-sm-7">
+        <div class="col-sm-8">
             {{!-- ziggeo video goes herestyle="width: 18rem; --}}
             <div class="cards">
                 <div class="ziggeo">
@@ -64,18 +59,17 @@
 
 
         {{!--tips and tricks go here--}}
-        <div class="cards help col-sm-5">
+        <div class="cards help col-sm-4">
             <h3>Instructions</h3>
             <p>Click the record button to begin your recording. Once you are finished filming your video, press the stop button.
-            </p>
+                </p>
             <p>Please fill out a title, description, category and at least one keyword. Once you are finished, click the submit
-                button!
-            </p>
+                button!</p>
         </div>
     </div>
     {{!-- Video Form --}}
     <div class="row table-form">
-        <div class="col-sm-7">
+        <div class="col-sm-12">
             <form class="form">
                 <div class="form-row">
                     <div class="form-group col-md-12">
@@ -127,26 +121,10 @@
                 <button type="submit" class="btn submit btn-primary" value={{id}}>Submit</button>
             </form>
         </div>
-        {{!-- LOGOUT FORM --}}
-        <div class="col-sm-5">
-            <form id="logout-card">
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <h5>Please submit the form before logging out!</h5>
-                    </div>
-                    <div class="form-group col-md-6">
-                        <button class="btn btn-primary" id="logout" href="/logout">
-                            logout
-                        </button>
-                    </div>
-                </div>
-            </form>
-        </div>
-
     </div>
 </div>
-</div>
-</div>
+
+
 
 {{!-- footer --}}
 <footer class="footer">
@@ -154,8 +132,6 @@
     <a class="brand" href="/">Delta 32</a>
     <a class="links"> || </a>
     <a class="links" href="#">About </a>
-    <a class="links" href="/careers">Careers </a>
+    <a class="links" href="#">Careers </a>
     </span>
 </footer>
-</div>
-</div>
