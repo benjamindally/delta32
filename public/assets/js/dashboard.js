@@ -18,12 +18,15 @@ $(function() {
     var keywordThree = $("#keyword3")
       .val()
       .trim();
+    var token = $("#videoLink")
+      .val()
+      .trim();
     var ContributorId = $(".submit").attr("value");
 
     var videoInfo = {
       title: title,
       description: description,
-      link: "Unknown",
+      token: token,
       category: category,
       keywordOne: keywordOne,
       keywordTwo: keywordTwo,
@@ -57,5 +60,6 @@ $(function() {
     $("#keyword1").val("");
     $("#keyword2").val("");
     $("#keyword3").val("");
+    $("#videoLink").val("");
   }
 });
