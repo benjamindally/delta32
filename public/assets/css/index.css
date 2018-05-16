@@ -16,7 +16,7 @@ body {
 nav {
   z-index: 1;
   position: fixed !important;
-  height: 8vh;
+  height: 3.1em;
   top: 0px;
   left: 0;
   right: 0;
@@ -114,7 +114,6 @@ nav {
 .shrikhand {
   font-family: "Shrikhand", cursive;
   color: white;
-  
 }
 
 .footer {
@@ -136,4 +135,9 @@ nav {
   padding: 5px;
   text-decoration: none;
   color: black !important;
+}
+
+.whiteLink:hover {
+  text-decoration: none;
+  color: white;
 }
