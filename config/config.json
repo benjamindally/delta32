@@ -16,10 +16,10 @@
     "dialect": "mysql"
   },
   "production": {
-    "port": 8889,
-    "username": "root",
-    "password": "root",
-    "database": "delta32_db",
+    "port": 3306,
+    "username": "od4rwhvyi79jj76p",
+    "password": "estfa4ndm039r86j",
+    "database": "mjwm1v1psrvgy97o",
     "host": "127.0.0.1",
     "dialect": "mysql"
   }
