@@ -21,6 +21,11 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
     },
 
+    thumbnail: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+
     //this adds the category selected
     category: {
       type: DataTypes.STRING,
