@@ -21,13 +21,13 @@ var db = {};
 // }
 
 if (process.env.DATABASE_URL) {
-  sequelize = new Sequelize(process.env.DATABASE_URL, {
+  var sequelize = new Sequelize(process.env.DATABASE_URL, {
     dialect: "postgres",
     protocol: "postgres",
     logging: true,
   });
 } else {
-  sequelize = new Sequelize("postgres://localhost:8080/delta32_db");
+  var sequelize = new Sequelize("postgres://localhost:8080/delta32_db");
 }
 
 fs
