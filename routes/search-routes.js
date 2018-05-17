@@ -86,7 +86,7 @@ module.exports = function(app) {
       include: [db.Contributor],
     }).then(function(result) {
       let hbsObject = {
-        videos: result,
+        videos: result
       };
       res.render("video", hbsObject);
       //res.json(hbsObject);
