@@ -81,20 +81,22 @@
         </div>
     </div>
     {{!-- RESULTS COLUMN --}}
-    <div class="col-sm-6">
+    <div class="col-sm-6" id="results_display">
+        <h2 class="text-center mt-3">Search Results</h2>
+        <hr>
         <ul>{{#each videos}}
             <li>
-                {{!--
-                <a class="vid-box" href="/posts/{{../permalink}}#{{id}}">
-                    <img class="thumbnail" src="{{thumb}}" alt="doctor"> --}}
-                    <h3 class="video-link vid-title" value={{this.id}}>{{this.title}}</h3>
-                    <p class="video-link vid-desc" }>{{this.description}}</p>
-
-                    {{!-- </a> --}}
+                <div class="box">
+                    <div class="box-content">
+                        <h3 class="video-link vid-title" value={{this.id}}>{{this.title}}</h3>
+                        <p class="video-link vid-desc" }>{{this.description}}</p>
+                    </div>
+                </div>
 
             </li>
+            {{/each}}
         </ul>
-        {{/each}}
+
     </div>
     <div class="col-sm-3 text-center">
         <div class="box">
