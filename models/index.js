@@ -27,7 +27,13 @@ if (process.env.DATABASE_URL) {
     logging: true,
   });
 } else {
-  var sequelize = new Sequelize("postgres://localhost:8080/");
+  var sequelize = new Sequelize(
+    config.database,
+    config.database,
+    config.username,
+    config.password,
+    config
+  );
 }
 
 fs
