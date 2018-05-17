@@ -8,34 +8,17 @@ var basename = path.basename(__filename);
 var env = process.env.NODE_ENV || "development";
 var config = require(__dirname + "/../config/config.json")[env];
 var db = {};
-var sequelize = "";
-// if (config.use_env_variable) {
-//   var sequelize = new Sequelize(process.env[config.use_env_variable], config);
-// } else {
-//   var sequelize = new Sequelize(
-//     config.database,
-//     config.username,
-//     config.password,
-//     config
-//   );
-// }
 
-if (process.env.DATABASE_URL) {
-  var sequelize = new Sequelize(process.env.DATABASE_URL, {
-    dialect: "postgres",
-    protocol: "postgres",
-    logging: true,
-  });
+if (process.env.JAWSDB_URL) {
+  var sequelize = new Sequelize(process.env.JAWSDB_URL);
+} else {
+  var sequelize = new Sequelize(
+    config.database,
+    config.username,
+    config.password,
+    config
+  );
 }
-// } else {
-//   var sequelize = new Sequelize(
-//     config.database,
-//     config.username,
-//     config.password,
-//     config,
-//     { dialect: "postgres" }
-//   );
-// }
 
 fs
   .readdirSync(__dirname)
