@@ -26,16 +26,16 @@ if (process.env.DATABASE_URL) {
     protocol: "postgres",
     logging: true,
   });
-} else {
-  var sequelize = new Sequelize(
-    config.database,
-    config.database,
-    config.username,
-    config.password,
-    config,
-    { dialect: "postgres" }
-  );
 }
+// } else {
+//   var sequelize = new Sequelize(
+//     config.database,
+//     config.username,
+//     config.password,
+//     config,
+//     { dialect: "postgres" }
+//   );
+// }
 
 fs
   .readdirSync(__dirname)
