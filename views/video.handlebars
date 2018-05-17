@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="assets/css/vid.css">
+<link rel="stylesheet" href="/assets/css/vid.css">
 
 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
@@ -59,41 +59,41 @@
 
             <!-- VID HERE -->
 
-        <div class="vid-card">
- 
+            <div class="vid-card">
 
-            {{#videos}}
-<ziggeo ziggeo-width="560" ziggeo-height="315" ziggeo-playonclick="true" ziggeo-video={{this.token}}>
-                                        </ziggeo>
-    
-    <h1 class="vid-title" value={{this.token}}>{{this.title}}</h1>
-    <h6 class="vid-desc">{{this.description}}</h6>
-</div>
-{{/videos}}
-</div>
 
-    <div class="col-sm-1"></div>
-    
-    <div class="col-sm-5">
-        <div class="side-card">
-            <div class="about">
-                <!-- info about the doctor goes here -->
-                <h3>Thanks To Our Contrubitor:</h3>
-                <ul>
-                    {{#videos}}
-                    <li>{{Contributor.name}}</li>
-                    <li>{{Contributor.specality}}</li>
-                    {{/videos}}
-                </ul>
+                {{#videos}}
+                <ziggeo ziggeo-width="560" ziggeo-height="315" ziggeo-playonclick="true" ziggeo-video={{this.token}}>
+                </ziggeo>
+
+                <h1 class="vid-title" value={{this.token}}>{{this.title}}</h1>
+                <h6 class="vid-desc">{{this.description}}</h6>
             </div>
+            {{/videos}}
+        </div>
 
+        <div class="col-sm-1"></div>
+
+        <div class="col-sm-5">
+            <div class="side-card">
+                <div class="about">
+                    <!-- info about the doctor goes here -->
+                    <h3>Thanks To Our Contrubitor:</h3>
+                    <ul>
+                        {{#videos}}
+                        <li>{{Contributor.name}}</li>
+                        <li>{{Contributor.specality}}</li>
+                        {{/videos}}
+                    </ul>
+                </div>
+
+            </div>
         </div>
     </div>
 </div>
-</div>
 
 
-{{!-- footer  --}}
+{{!-- footer --}}
 <footer class="footer">
     <span class="text-muted"></span>
     <a class="brand" href="/">Delta 32</a>
