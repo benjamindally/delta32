@@ -26,6 +26,8 @@ $(function() {
     var thumbnail = $("#thumbnail").val();
     var ContributorId = $(".submit").attr("value");
 
+    console.log(thumbnail);
+
     //this creates a model based on the varibles created from the form
     var videoInfo = {
       title: title,

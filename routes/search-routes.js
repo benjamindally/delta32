@@ -78,7 +78,7 @@ module.exports = function(app) {
   });
 
   //find video column by ID
-  app.get("/api/videos/:id", function(req, res) {
+  app.get("/api/videos/id/:id", function(req, res) {
     db.Video.findOne({
       where: {
         id: req.params.id,
@@ -89,6 +89,7 @@ module.exports = function(app) {
         videos: result,
       };
       res.render("video", hbsObject);
+      //res.json(hbsObject);
     });
   });
 

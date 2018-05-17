@@ -1,5 +1,6 @@
 {{!-- nav Bar --}}
 <link rel="stylesheet" type="text/css" href="/assets/css/search.css">
+<script type="text/javascript" src="/assets/js/video.js"></script>
 
 <div class="no-gutter">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -86,8 +87,8 @@
                 {{!--
                 <a class="vid-box" href="/posts/{{../permalink}}#{{id}}">
                     <img class="thumbnail" src="{{thumb}}" alt="doctor"> --}}
-                    <h3 class="video-link vid-title" id={{this.id}}>{{this.title}}</h3>
-                    <p class="video-link vid-desc" id={{this.id}}>{{this.description}}</p>
+                    <h3 class="video-link vid-title" value={{this.id}}>{{this.title}}</h3>
+                    <p class="video-link vid-desc" }>{{this.description}}</p>
 
                     {{!-- </a> --}}
 
