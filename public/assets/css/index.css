@@ -37,6 +37,10 @@ nav {
   background-color: #b1b1b136;
 }
 
+#missionBtn:hover {
+  cursor: pointer;
+}
+
 /* carousel */
 .carousel-inner {
   height: 80vh;
