@@ -18,7 +18,7 @@
                 // 
                 ZiggeoApi.V2.Config.set("flash", "https://polar-journey-48683.herokuapp.com/recorder.swf");
                 ZiggeoApi.token = token;
-
+                console.log(ZiggeoApi);
                 var ziggeoTag = $("<ziggeo ziggeo-width=320 ziggeo-height=240 ziggeo-responsive=true ziggeo-countdown=3 ziggeo-faceoutline=true ></ziggeo>")
                 $('#recorder').append(ziggeoTag);
             })

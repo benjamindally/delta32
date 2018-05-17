@@ -1,10 +1,17 @@
+application = new ZiggeoApi.V2.Application({
+  token: "4919f23cbee42b4be71fdc75207c9e30",
+});
+
 $(function() {
-  var token = $(".vid-title").attr("value");
+  token = $(".vid-title").attr("value");
 
-  token.promise().done(function(token) {
-    $("#ziggeo_player").attr("ziggeo-video", token);
+  var video = $(
+    "<ziggeo id=video_player ziggeo-width=560 ziggeo-height=315 ziggeo-playonclick=true ziggeo-video=" +
+      token +
+      "></ziggeo>"
+  );
+
+  application.on("ready", function() {
+    $(".vid-card").append(video);
   });
-
-  console.log(token);
-  // console.log($("ziggeo_player".attr("ziggeo-video")));
 });
