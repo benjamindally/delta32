@@ -31,6 +31,15 @@
 
     </script>
 
+<script>
+    ZiggeoApi.Events.On("submitted", function (data) {
+        var imgURL = ZiggeoApi.Videos.image('"' + link + '"');
+        var image = $("<img>").attr("src", imgURL);
+        $("#thumbnail").val(image);
+    });
+</script>
+
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
         crossorigin="anonymous"> {{!--
     <!-- fonts -->--}}
