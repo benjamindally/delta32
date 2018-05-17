@@ -27,7 +27,7 @@ if (process.env.DATABASE_URL) {
     logging: true,
   });
 } else {
-  var sequelize = new Sequelize("postgres://localhost:8080/delta32_db");
+  var sequelize = new Sequelize("postgres://localhost:8080/");
 }
 
 fs
