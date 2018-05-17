@@ -59,10 +59,11 @@
 
             <!-- VID HERE -->
 
+
+
+
+            {{#videos}}
             <div class="vid-card">
-
-
-                {{#videos}}
                 <ziggeoplayer ziggeo-width="560" ziggeo-height="315" ziggeo-playonclick="true" ziggeo-video={{this.token}}>
                     </ziggeo>
 
@@ -71,25 +72,26 @@
             </div>
             {{/videos}}
         </div>
+    </div>
 
-        <div class="col-sm-1"></div>
+    <div class="col-sm-1"></div>
 
-        <div class="col-sm-5">
-            <div class="side-card">
-                <div class="about">
-                    <!-- info about the doctor goes here -->
-                    <h3>Thanks To Our Contrubitor:</h3>
-                    <ul>
-                        {{#videos}}
-                        <li>{{Contributor.name}}</li>
-                        <li>{{Contributor.specality}}</li>
-                        {{/videos}}
-                    </ul>
-                </div>
-
+    <div class="col-sm-5">
+        <div class="side-card">
+            <div class="about">
+                <!-- info about the doctor goes here -->
+                <h3>Thanks To Our Contrubitor:</h3>
+                <ul>
+                    {{#videos}}
+                    <li>{{Contributor.name}}</li>
+                    <li>{{Contributor.specality}}</li>
+                    {{/videos}}
+                </ul>
             </div>
+
         </div>
     </div>
+</div>
 </div>
 
 
