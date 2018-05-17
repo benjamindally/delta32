@@ -23,10 +23,11 @@
                 $('#recorder').append(ziggeoTag);
             })
         })
+             ZiggeoApi.Config.webrtc = true;
     </script>
     <script>
             ZiggeoApi.Events.on("submitted", function (data) { var link = data.video.token; $("#videoLink").val(link); });
-             ZiggeoApi.Config.webrtc = true;
+        
 
 
     </script>
