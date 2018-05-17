@@ -2,6 +2,11 @@
 <link rel="stylesheet" type="text/css" href="/assets/css/search.css">
 <script type="text/javascript" src="/assets/js/video.js"></script>
 
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+<script type="text/javascript" src="/assets/js/index.js"></script>
+
+
 <div class="no-gutter">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand ml-1" href="/">Delta 32</a>
@@ -83,7 +88,7 @@
     {{!-- RESULTS COLUMN --}}
     <div class="col-sm-6" id="results_display">
         <h2 class="text-center mt-3">Search Results</h2>
-        <hr>
+        <hr> {{#if videos}}
         <ul>{{#each videos}}
             <li>
                 <div class="box">
@@ -96,7 +101,14 @@
             </li>
             {{/each}}
         </ul>
-
+        {{else}}
+        <div class="box">
+            <div class="box-content">
+                <h3 class="no-results">Sorry we didn't find any videos.</h3>
+                <h3 class="no-results">try again!</h3>
+            </div>
+        </div>
+        {{/if}}
     </div>
     <div class="col-sm-3 text-center">
         <div class="box">

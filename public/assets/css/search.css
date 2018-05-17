@@ -128,3 +128,7 @@ a:hover {
 #results_display {
   min-height: 100vh;
 }
+.no-results {
+  text-align: center;
+  font-family: "Oswald", sans-serif;
+}
