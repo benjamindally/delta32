@@ -61,7 +61,18 @@ nav {
   text-decoration: none;
 }
 .vid-title {
+  font-family: "Oswald", sans-serif;
   color: black;
+}
+.vid-title:hover {
+  color: #2a81f6;
+  font-weight: bold;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 .thumbnail {
@@ -112,4 +123,8 @@ nav {
 }
 a:hover {
   text-decoration: none;
+}
+
+#results_display {
+  min-height: 100vh;
 }
