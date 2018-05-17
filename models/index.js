@@ -32,7 +32,8 @@ if (process.env.DATABASE_URL) {
     config.database,
     config.username,
     config.password,
-    config
+    config,
+    { dialect: "postgres" }
   );
 }
 
