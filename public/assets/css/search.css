@@ -60,14 +60,48 @@ nav {
   display: inline-flex;
   text-decoration: none;
 }
+
 .vid-title {
-  font-family: "Oswald", sans-serif;
-  color: black;
+  font-family: "Do Hyeon", sans-serif;
+  position: relative;
+  display: inline-block;
+  color: rgb(80, 80, 80);
+  transition: color 0.2s ease;
+  padding: 3px 0;
+  margin-bottom: 10px;
 }
+
 .vid-title:hover {
-  color: #2a81f6;
-  font-weight: bold;
+  color: #aaa;
 }
+
+.vid-title:hover::after,
+.vid-title:hover::before {
+  width: 100%;
+  left: 0;
+}
+
+.vid-title::after,
+.vid-title::before {
+  content: "";
+  position: absolute;
+  top: calc(100% + 5px);
+  width: 0;
+  right: 0;
+  height: 3px;
+}
+
+.vid-title::before {
+  transition: width 0.4s cubic-bezier(0.51, 0.18, 0, 0.88) 0.1s;
+  background: #2196f3;
+}
+
+.vid-title::after {
+  transition: width 0.2s cubic-bezier(0.29, 0.18, 0.26, 0.83);
+  background: #f44336;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 ul {
   list-style-type: none;
