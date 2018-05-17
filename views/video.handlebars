@@ -49,40 +49,43 @@
 <div class="container main">
     <div class="row">
         <div class="col-sm-6">
-            <div class="vid-card">
-                <!-- VID HERE -->
+
+            <!-- VID HERE -->
 
 
-                {{video}}
-                <h2 class="vid-title">{{title}}</h2>
-                <p class="vid-desc">{{desc}}</p>
+            <ul class="vid-card">{{#each videos}}
+                <li class="vid-title">{{this.title}}</li>
+                <li class="vid-desc">{{this.description}}</li>
 
-
-                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/JAjZv41iUJU?rel=0&amp;controls=0&amp;showinfo=0&autoplay=1"
-                    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                <h2 class="vid-title">Video Title</h2>
-                <p class="vid-desc">Video Description goes here</p>
-            </div>
-
-            <!--  -->
+            </ul>
+            {{!--
+            <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/JAjZv41iUJU?rel=0&amp;controls=0&amp;showinfo=0&autoplay=1"
+                frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <h2 class="vid-title">Video Title</h2>
+            <p class="vid-desc">Video Description goes here</p>
+            --}}
         </div>
-        <div class="col-sm-1"></div>
-        <div class="col-sm-5">
-            <div class="side-card">
-                <div class="about">
-                    <!-- info about the doctor goes here -->
-                    <h1>Thanks To Our Contrubitor:</h1>
-                    <ul>
-                        <li>{{name}}</li>
-                        <li>{{specality}}</li>
-                        <li>{{...}}</li>
-                        <li>{{...}}</li>
-                    </ul>
-                </div>
+        {{/each}}
 
-            </div>
-        </div>
     </div>
+    <div class="col-sm-1"></div>
+    {{!--
+    <div class="col-sm-5">
+        <div class="side-card">
+            <div class="about">
+                <!-- info about the doctor goes here -->
+                <h1>Thanks To Our Contrubitor:</h1>
+                <ul>
+                    <li>{{name}}</li>
+                    <li>{{specality}}</li>
+                    <li>{{...}}</li>
+                    <li>{{...}}</li>
+                </ul>
+            </div>
+
+        </div>
+    </div> --}}
+</div>
 </div>
 
 

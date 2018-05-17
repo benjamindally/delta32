@@ -23,13 +23,17 @@ $(function() {
     var token = $("#videoLink")
       .val()
       .trim();
+    var thumbnail = $("#thumbnail").val();
     var ContributorId = $(".submit").attr("value");
+
+    console.log(thumbnail);
 
     //this creates a model based on the varibles created from the form
     var videoInfo = {
       title: title,
       description: description,
       token: token,
+      thumbnail: thumbnail,
       category: category,
       keywordOne: keywordOne,
       keywordTwo: keywordTwo,
